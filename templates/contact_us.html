@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+    {% block title %}BroadCast - Contact Us{% endblock %}
+{% block main %}
+    <div class="container jumbotron mt-2 mb-2">
+        <div class="container contact-form">
+            <form method="post" action="{{ url_for('contactUs') }}">
+                <h3>Drop Us a Message</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="Name *" value="" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" class="form-control" placeholder="Email *" value="" required/>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="phone_no" class="form-control" placeholder="Your Phone Number *" value="" required/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <textarea name="message" class="form-control" placeholder="Your Message ...*" style="height: 150px;" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="submit" name="submit" class="btn btn-primary" value="Send Message" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

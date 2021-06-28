@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+    {% block title %}BroadCast - Home{% endblock %}
+{% block main %}
+    <div class="container">
+        <div class="jumbotron mt-2 mb-2">
+            <h1 class="display-4">Brings you to aware around the word</h1>
+            <p class="lead">
+                A leading Newpaper company has taken a new initiative to launch a web application for
+                collecting news and displaying them in a website. The company would like to name the
+                application as “The BroadCast”. Design the web application for the company using Python
+                flask Framework.
+            </p>
+            <hr class="my-6">
+            <p class="lead">
+                <a class="btn btn-secondary btn-lg" href="{{ url_for('news') }}" role="button">Headlines</a>
+            </p>
+        </div>
+    </div>
+{% endblock %}

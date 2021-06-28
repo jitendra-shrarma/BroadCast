@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+        <title>
+            BroadCast - Login
+        </title>
+
+        <!-- Optional JavaScript -->
+        <script src="{{ url_for('static', filename='jquery-3.3.1.slim.min.js') }}"></script>
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="{{ url_for('static', filename='popper.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    </head>
+
+    <body>
+        <section class="container">
+            <div class="container jumbotron mt-5" style="max-width:400px">
+                <div class="row justify-content-sm-center">
+                    <div class="card">
+                        <div class="card-body">
+                            {% if get_flashed_messages() %}
+                                <div class="container text-center">
+                                    <div class="p-3 mb-2 bg-danger text-white">{{ get_flashed_messages()[0] }}</div>
+                                </div>
+                            <br>
+                            {% endif %}
+                            <h4 class="card-title">Login</h4>
+                            <form method="POST" action="{{ url_for('login') }}" class="login">
+                                <div class="form-group">
+                                    <label for="first_name">First Name</label>
+                                    <input type="text" class="form-control" name="first_name" value="" required autofocus>
+								</div>
+                                <div class="form-group">
+                                    <label for="last_name">Last Name</label>
+									<input type="text" class="form-control" name="last_name" required data-eye>
+								</div>
+                                <div class="form-group m-0">
+                                    <button type="submit" class="btn btn-primary btn-block">
+                                        Login
+									</button>
+								</div>
+                                <div class="mt-4 text-center">
+									New your? <a href="{{ url_for('register') }}">Register yourself.</a>
+								</div>
+							</form>
+                        </div>
+					</div>
+				</div>
+                <div class="row justify-content-sm-center">
+                    <div class="footer">
+						Copyright &copy; 2020 &mdash; BroadCast
+					</div>
+                </div>
+			</div>
+        </section>
+    </body>
+</html>
